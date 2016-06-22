@@ -59,6 +59,72 @@ var after = new mapboxgl.Map({
 
 new mapboxgl.Compare(before, after);
 
+after.on('load', function () {
+    after.addSource("markers", {
+        "type": "geojson",
+        "data": {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [77.9397,13.0254]
+                },
+                "properties": {
+                    "title": "2015"
+                }
+            }]
+        }
+    });
+
+    after.addLayer({
+        "id": "markers",
+        "type": "symbol",
+        "source": "markers",
+        "layout": {
+            "icon-image": "{marker-symbol}-15",
+            "text-field": "{title}",
+            "text-size": 50,
+            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+            "text-offset": [0, 0.6],
+            "text-anchor": "top"
+        }
+    });
+ });  
+
+
+ before.on('load', function () {
+    before.addSource("markers", {
+        "type": "geojson",
+        "data": {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [77.2572,13.0254]
+                },
+                "properties": {
+                    "title": "1999"
+                }
+            }]
+        }
+    });
+
+    before.addLayer({
+        "id": "markers",
+        "type": "symbol",
+        "source": "markers",
+        "layout": {
+            "icon-image": "{marker-symbol}-15",
+            "text-field": "{title}",
+            "text-size": 50,
+            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+            "text-offset": [0, 0.6],
+            "text-anchor": "top"
+        }
+    });
+ });   
 
 </script>
 
