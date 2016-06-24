@@ -1,6 +1,6 @@
 # Satellite_workshop
 
-The steps I followed to achieve the application.
+The steps I followed to achieve the application are:
 
 ## Step 1 (Studio)
 * Load the `.tiff` file of L8 and L7 into studio and create saperate styles (L8 and L7) for each.
